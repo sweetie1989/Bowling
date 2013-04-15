@@ -13,11 +13,13 @@ public class ScoreTest {
     @Test
     public void should_be_9_when_the_score_is_4_and_5(){
         //given
-        Counter scoreCounter = new Counter();
+        Round round = new Round();
         //when
         int firstHitNum = 4;
         int secondHitNum = 5;
-        int result = scoreCounter.getOneRoundScore(firstHitNum, secondHitNum);
+        round.setHitNum(firstHitNum,secondHitNum);
+        int result;
+        result = round.getOneRoundScore();
         //then
         assertThat(result,is(9));
     }
